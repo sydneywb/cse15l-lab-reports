@@ -1,6 +1,6 @@
 # Lab Report 1:
 
-All of the following commands were run in the Edstem terminal after the Github repository at [Link] (https://github.com/ucsd-cse15l-f23/lecture1) was downloaded to the workspace. For all commands, I started with the working directory **/home/lecture1**.
+All of the following commands were run in the Edstem terminal after the Github repository at [Link] (https://github.com/ucsd-cse15l-f23/lecture1.html) was downloaded to the workspace. For all commands, I started with the working directory **/home/lecture1**.
 
 ## Command 1: `cd`
 
