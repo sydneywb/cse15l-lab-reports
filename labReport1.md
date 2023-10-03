@@ -1,6 +1,6 @@
 # Lab Report 1:
 
-All of the following commands were run in the Edstem terminal after the Github repository at [Link](https://github.com/ucsd-cse15l-f23/lecture1.html) was downloaded to the workspace. For all commands, I started with the working directory **/home/lecture1**.
+All of the following commands were run in the Edstem terminal after the Github repository at [this link](https://github.com/ucsd-cse15l-f23/lecture1.html) was downloaded to the workspace. For all commands, I started with the working directory **/home/lecture1**.
 
 ## Command 1: `cd`
 
@@ -58,4 +58,20 @@ The ls command followed by a path to a file prints the relative path to that fil
 [user@sahara ~/lecture1]$ cat
 
 ```
-When the cat...
+When the cat command is not given a command line argument, it reads from the standard input, which means that it will print any text you type into the terminal until it receives the cancel (ctrl+C) or end-of-file (ctrl+D) signals. For example, if I run cat with no arguments then type "dog" into the terminal and press enter, the terminal prints "dog" again and waits for the next input. The output is not an error.
+
+2. Path to a *directory* as an argument
+```
+[user@sahara ~/lecture1]$ cat messages
+cat: messages: Is a directory
+[user@sahara ~/lecture1]$
+```
+The cat command with the path to a directory as an argument produces an error because the cat command is used to print the contents of one or more files to the standard output, not the file/folder names within a directory. Therefore, it expects to receive one or more file names as arguments, not a directory.
+
+3. Path to a *file* as an argument
+```
+[user@sahara ~/lecture1]$ cat messages/en-us.txt
+Hello World!
+[user@sahara ~/lecture1]$
+```
+When the cat command is given the path to a file as an argument, it prints the contents of that file, whether it's text from a txt file, lines of code from a java file, or the contents of any other file type. In this filesystem, there is a "en-us.txt" file inside the "messages" folder which is inside the "lecture1" folder. The en-us.txt file contains the text "Hello World!", so the cat command prints this text to standard output. The cat command stands for concatenation, which means to attach one thing to the end of another. Therefore, we can write multiple file paths separated by spaces after the cat command to print the contents of each of the files one after the other. The output is not an error.
