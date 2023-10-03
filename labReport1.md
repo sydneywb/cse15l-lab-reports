@@ -31,7 +31,7 @@ The cd command with a path to a file produces an error saying that the given com
 1. *No* arguments
 ```
 [user@sahara ~/lecture1]$ ls
-Hello.class Hello.java **messages** README
+Hello.class Hello.java messages README
 [user@sahara ~/lecture1]$
 ```
 The ls command lists the files and folders in the working directory. Since the messages folder and the Hello.class, Hello.java, and README files are in the lecture1 folder in this filesystem, they are printed in the output. The output is not an error.
@@ -76,4 +76,3 @@ Hello World!
 [user@sahara ~/lecture1]$
 ```
 When the cat command is given the path to a file as an argument, it prints the contents of that file, whether it's text from a txt file, lines of code from a java file, or the contents of any other file type. In this filesystem, there is a "en-us.txt" file inside the "messages" folder which is inside the "lecture1" folder. The en-us.txt file contains the text "Hello World!", so the cat command prints this text to standard output. The cat command stands for concatenation, which means to attach one thing to the end of another. Therefore, we can write multiple file paths separated by spaces after the cat command to print the contents of each of the files one after the other. The output is not an error.
-<img width="414" alt="Screenshot 2023-10-03 at 11 59 54 AM" src="https://github.com/sydneywb/cse15l-lab-reports/assets/67661144/8d494fce-61e2-449e-851b-72cce2753b74">
