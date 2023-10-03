@@ -1,8 +1,8 @@
-#Lab Report 1:#
+#Lab Report 1:
 
 All of the following commands were run in the Edstem terminal after the Github repository at [link] (https://github.com/ucsd-cse15l-f23/lecture1) was downloaded to the workspace. For all three commands, I started with the working directory **/home/lecture1**.
 
-##Command 1:## `cd`
+##Command 1: `cd`
 
 1. *No* arguments
 ```
