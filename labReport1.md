@@ -9,30 +9,69 @@ All of the following commands were run in the Edstem terminal after the Github r
 [user@sahara ~/lecture1]$ cd
 [user@sahara ~]$
 ```
-The cd command with no arguments causes the working directory to change to /home, regardless of what the current working directory is. For example, if I had started with the working directory /home/lecture1/messages and run the `cd` command with no arguments,
-it would still change the working directory to /home. The output is not an error.
+The cd command with no arguments causes the working directory to change to /home (or whatever the default working directory is when you first open the terminal) regardless of what the current working directory is. For example, if I had started with the working directory /home/lecture1/messages and run the `cd` command with no arguments, it would still change the working directory to /home. The output is not an error.
+
 2. Path to a *directory* as an argument
 ```
 [user@sahara ~/lecture1]$ cd messages
 [user@sahara ~/lecture1/messages]$ 
 ```
-The cd command with a path to a directory--the messages folder, in this case--changes the current directory to be /home/lecture1/messages. This is because if the argument after the `cd` command is a relative path, the working directory becomes that relative path
-starting from the current working directory. The output is not an error.
+The cd command with a path to a directory--the messages folder, in this case--changes the current directory to be /home/lecture1/messages. This is because if the argument after the `cd` command is a relative path, the working directory becomes that relative path starting from the current working directory. The output is not an error.
+
 3. Path to a *file* as an argument
 ```
 [user@sahara ~/lecture1]$ cd messages/en-us.txt
 bash: cd: messages/en-us.txt: Not a directory
 ```
-The cd command with a path to a file produces an error saying that it was 
+The cd command with a path to a file produces an error saying that the given command line argument was not a directory. This is because messages/en-us.txt is the relative path to a text file, but the cd command stands for "change directory" and therefore wants the following command line argument to be a directory.
 
-`ls`
+## Command 2: `ls`
 
-1. b
-2. b
-3. b
+1. *No* arguments
+```
+[user@sahara ~/lecture1]$ ls
+Hello.class Hello.java **messages** README
+[user@sahara ~/lecture1]$
+```
+The ls command lists the files and folders in the working directory. Since the messages folder and the Hello.class, Hello.java, and README files are in the lecture1 folder, they are printed in the output. The output is not an error.
 
-`cat`
+2. Path to a *directory* as an argument
+```
+[user@sahara ~/lecture1]$ ls messages
+en-us.txt es-mx.txt fi.txt zh-cn.txt
+[user@sahara ~/lecture1]$
+```
+The ls command can also take a directory as a command line argument and list the files and folders in that given folder. In this case, there are four text files in the messages folder called, en-us.txt, es-mx.txt, fi.txt, and zh-cn.txt, so they are printed in the output. The output is not an error.
 
-1. b
-2. b
-3. b
+3. Path to a *file* as an argument
+```
+[user@sahara ~/lecture1]$ ls messages/en-us.txt
+messages/en-us.txt
+[user@sahara ~/lecture1]$
+```
+The ls command followed by a path to a file prints the relative path to that file from the working directory. The no other files in that file's folder are listed, and the current working directory stays the same. The output is not an error.
+
+## Command 3: `cat`
+
+1. *No* arguments
+```
+[user@sahara ~/lecture1]$ cat
+
+```
+When the cat command is not given a command line argument, it reads from the standard input, which means that it will print any text you type into the terminal until it receives the cancel (ctrl+C) or end-of-file (ctrl+D) signals. For example, if I run cat with no arguments then type "dog" into the terminal and press enter, the terminal prints "dog" again and waits for the next input. The output is not an error.
+
+2. Path to a *directory* as an argument
+```
+[user@sahara ~/lecture1]$ cat messages
+cat: messages: Is a directory
+[user@sahara ~/lecture1]$
+```
+The cat command with the path to a directory as an argument produces an error because the cat command is used to print the contents of one or more files to the standard output. Therefore, it expects to receive one or more file names as arguments, not a directory.
+
+3. Path to a *file* as an argument
+```
+[user@sahara ~/lecture1]$ cat messages/en-us.txt
+Hello World!
+[user@sahara ~/lecture1]$
+```
+When the cat command is given the path to a file as an argument, it prints the contents of that file, whether it's text from a txt file, lines of code from a java file, or the contents of any other type of file. In this filesystem, there is a "en-us.txt" file inside the "messages" folder inside the "lecture1" folder. The "en-us.txt" file contains the text "Hello World!", so the cat command prints this text. The cat command stands for concatenation, which means to attach one thing to the end of another, which means we can write multiple file paths separated by spaces after the cat command to print the contents of each of the files. The output is not an error.
