@@ -13,7 +13,7 @@ After compiling the two files, I start the server in the terminal using the comm
 
 ![add-message sshot 1](urldemo1.png)
 
-When we go to the url "http://localhost:5482/add-message?s=apple", the handleRequest(URI url) method in the Handler class in StringServer.java is called. It is given the URI object "http://localhost:5482/add-message?s=apple" as the argument for the parameter "url". Many built-in methods such as .getPath(), .getQuery(), .equals(), and .split() are called. Initially, str is empty and num is 0, but the handlerequest method increments num to 1 and updates str to be "1. apple\n". 
+When we go to the url "http://localhost:5482/add-message?s=apple", the handleRequest(URI url) method in the Handler class in StringServer.java is called. It is given the URI object "http://localhost:5482/add-message?s=apple" as the argument for the parameter "url". Many built-in methods such as .getPath(), .getQuery(), .equals(), and .split() are called. Initially, str is empty and num is 0, but the handlerequest method increments num to 1 and updates str to be "1. apple\n".
 
 **/add-message Demo #2**
 
