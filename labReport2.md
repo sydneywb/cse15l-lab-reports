@@ -19,13 +19,16 @@ When we go to the url "http://localhost:5482/add-message?p=apple", the handleReq
 
 ## Part 2
 
-This is the path to the private ssh key on my personal computer.
+This is the path to the private ssh key on my personal computer:
+
 ![Path to Private ssh key](pathtoprivate.png)
 
-This is the path to the public ssh key on the ieng6 computer.
+This is the path to the public ssh key on the ieng6 computer:
+
 ![Path to Public ssh key](pathtopublic.png)
 
 This is me logging into my account on the ieng6 computer without a password. Nice!
+
 ![Logging in Without Password](loginwithoutpassword.png)
 
 ## Part 3
