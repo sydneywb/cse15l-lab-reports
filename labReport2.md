@@ -24,8 +24,9 @@ When we go to the url "http://localhost:5482/add-message?p=apple", the handleReq
 ## Part 2
 
 This is the path to the private ssh key on my personal computer:
+The file called id_rsa is the private key, and the path to it on my personal computer is /Users/sydneybadescu/.ssh/id_rsa
 
-![Path to Private ssh key](pathtoprivate.png)
+![Path to Private ssh key, Resubmission](pathtoprivate2.png)
 
 This is the path to the public ssh key on the ieng6 computer:
 
