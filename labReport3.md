@@ -1,5 +1,40 @@
 # Part 1: Bugs
+I'm choosing to focus on the bug in the `reverseInPlace(int[] arr)` method in ArrayExamples.java.
+#### Failure-Inducing Input
+An example of a failure-inducing input would be the int array {1, 2, 3, 4, 5}. Below is what this looks like as a JUnit test in a file called TestArrayExamples.java in the same directory as ArrayExamples.java.
+```
+import org.junit.Assert.*;
+import org.junit.*;
+public class TestArrayExamples {
+    @Test
+    public void testReverseInPlace() {
+        int[] input = {1, 2, 3, 4, 5};
+        ArrayExamples.reverseInPlace(input);
+        assertArrayEquals(new int[] {5, 4, 3, 2, 1}, input);
+    }
+}
+```
+#### Non Failure-Inducing Input
+An example of an input that does not produce a failure would be the int array {1, 1, 1, 1, 1}. Below is what this looks like as a JUnit test in a file called TestArrayExamples.java in the same directory as ArrayExamples.java.
+```
+import org.junit.Assert.*;
+import org.junit.*;
+public class TestArrayExamples {
+    @Test
+    public void testReverseInPlace() {
+        int[] input = {1, 1, 1, 1, 1};
+        ArrayExamples.reverseInPlace(input);
+        assertArrayEquals(new int[] {1, 1, 1, 1, 1}, input);
+    }
+}
+```
+#### The Symptom
+For the first test with the failure-inducing input, the symptom is that the actual array produced by reverseInPlace(int[] arr) differs from the expected array at index 3. At index 3, the actual array has int 4 whereas the expected array has int 2.
 
+BOTH TESTS & SCREENSHOTS
+
+
+#### The Bug
 
 
 
