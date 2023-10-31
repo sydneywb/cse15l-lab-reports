@@ -3,7 +3,7 @@ I'm choosing to focus on the bug in the `reverseInPlace(int[] arr)` method in Ar
 #### Failure-Inducing Input
 An example of a failure-inducing input would be the int array {1, 2, 3, 4, 5}. Below is what this looks like as a JUnit test in a file called TestArrayExamples.java in the same directory as ArrayExamples.java.
 ```
-import org.junit.Assert.*;
+import static org.junit.Assert.*;
 import org.junit.*;
 public class TestArrayExamples {
     @Test
@@ -17,7 +17,7 @@ public class TestArrayExamples {
 #### Non Failure-Inducing Input
 An example of an input that does not produce a failure would be the int array {1, 1, 1, 1, 1}. Below is what this looks like as a JUnit test in a file called TestArrayExamples.java in the same directory as ArrayExamples.java.
 ```
-import org.junit.Assert.*;
+import static org.junit.Assert.*;
 import org.junit.*;
 public class TestArrayExamples {
     @Test
@@ -29,13 +29,39 @@ public class TestArrayExamples {
 }
 ```
 #### The Symptom
-For the first test with the failure-inducing input, the symptom is that the actual array produced by reverseInPlace(int[] arr) differs from the expected array at index 3. At index 3, the actual array has int 4 whereas the expected array has int 2.
+The symptom of the bug is that when tested with the failure-inducing input int array {1, 2, 3, 4, 5}, the actual array produced by reverseInPlace(int[] arr) differs from the expected array at index 3. At index 3, the actual array has int 4 whereas the expected array has int 2. There is no symptom shown when tested with the non failure-inducing input of int array {1, 1, 1, 1, 1} because it passes the test.
 
-BOTH TESTS & SCREENSHOTS
-
+This is a screenshot of running the first test, which has failure-inducing input:
+![Failure-Inducing Input](failinducing.png)
+This is a screenshot of running the second test, which has a non failure-inducing input:
+![Non Failure-Inducing Input](nonfailinducing.png)
 
 #### The Bug
+BEFORE: The reverseInPlace(int[] arr) with the bug.
+```
+// In a file called ArrayExamples.java
+public class ArrayExamples {
+  static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = arr[arr.length - i - 1];
+    }
+  }
+```
 
+AFTER: The reverseInPlace(int[] arr) without the bug.
+```
+// In a file called ArrayExamples.java
+import java.util.Arrays;
+public class ArrayExamples {
+  static void reverseInPlace(int[] arr) {
+    int[] temp = Arrays.copyOf(arr, arr.length);
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = temp[arr.length - i - 1];
+    }
+  }
+}
+```
+The original bug was that the reverseInPlace(int[] arr) method would start replacing the elements at the start of the list with those at the back without storing the original elements at the back anywhere, so they were being forgotten. I fixed the issue by storing a copy of the original array in a variable temp so that all elements of the original array were stored safely and would not be forgotten as we changed the elements in the original array.
 
 
 # Part 2: Researching Commands - Find
