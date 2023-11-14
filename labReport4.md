@@ -33,7 +33,7 @@ I used keypresses like <Ctrl+A> to navigate to the beginning of the command line
 
 ![vim](labReport4images/vim.png)
 
-Keys pressed: `v i m <space> L <tab> . <tab> <enter>'
+Keys pressed: `v i m <space> L <tab> . <tab> <enter>`
 I ran the command "vim ListExamples.java" to open the specified .java file in the vim file editor.
 
 ![vimeditfile](labReport4images/vimeditfile.png)
