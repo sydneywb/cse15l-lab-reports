@@ -1,5 +1,4 @@
 # Lab Report 4 - Vim (Week 7)
-Sydney Badescu
 
 ![ssh_to_ieng6](labReport4images/ssh_to_ieng6.png)
 
