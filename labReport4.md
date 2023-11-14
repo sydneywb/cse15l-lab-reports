@@ -23,7 +23,7 @@ I used the "find" command to recursively print all of the files and directories 
 ![javac](labReport4images/javac.png)
 
 Keys pressed: `j a v a c <space> - c p <space> . : <Cmd+V> : <Cmd+V> <space> * . j a v a <enter>`
-Before the first `<Cmd+V>`, I used my trackpad to select "lib/hamcrest-core-1.3.jar" from the previous "find lib" command and pressed `<Cmd+C>` to copy it to my clipboard and paste it in the command line. Then I did the same procedure for "lib/junit-4.13.2.jar" by copying it with `<Cmd+C>` and pasting it with `<Cmd+V>`. Finally I press <enter> to compile the .java files in the lab7 repository.
+Before the first `<Cmd+V>`, I used my trackpad to select "lib/hamcrest-core-1.3.jar" from the previous "find lib" command and pressed `<Cmd+C>` to copy it to my clipboard and paste it in the command line. Then I did the same procedure for "lib/junit-4.13.2.jar" by copying it with `<Cmd+C>` and pasting it with `<Cmd+V>`. Finally I press `<enter>` to compile the .java files in the lab7 repository.
 
 ![java](labReport4images/java.png)
 
