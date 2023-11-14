@@ -55,12 +55,12 @@ I pressed the up arrow 3 times in order to access the "java -cp .:lib/hamcrest-c
 Keys pressed: `g i t <space> a d d <space> L <tab> <enter>`
 I tab autocompleted the name of the .java file I edited while doing "git add" to add it to my current commit.
 
-![gitcommit](labReport4images/gitcommit.png)
+![gitcommit](labReport4images/gitcommitupdated.png)
 
 Keys pressed: `g i t <space> c o m m i t <space> - m <space> " c h a n g e d <space> i n d e x 1 <space> t o <space> i n d e x 2 " <enter>`
 I used the "git commit" command to commit my file to the cloned repository. I used the "-m" flag to include the commit message in the same line as the "git commit" command.
 
-![gitpush](labReport4images/gitpush.png)
+![gitpush](labReport4images/gitpushupdated.png)
 
 Keys pressed: `g i t <space> p u s h <enter>`
 I used the "git push" command to finally push the changes I made in the cloned repository back to GitHub!
