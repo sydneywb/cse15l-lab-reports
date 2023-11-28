@@ -2,7 +2,7 @@
 ## Part 1 - Debugging Scenario
 
 ### Student's Original Post:
-Hello! I wrote my implementation of grade.sh from the Week 6 lab and am testing to see if it produces the expected results for different sample student submissions. I wrote a sample student submission that I expect to fail all junit tests in TestListExamples.java, but the output of grade.sh is that the submissions scores 100%! My guess is that line 46 on grade.sh, which reads `if [[ `grep "OK" junitResult.txt` != "" ]]` is causing this since that’s the if statement that must evaluate to true to get to the bash command `echo "SCORE AS PERCENT: 100%"` but I’m not sure why it would be evaluating to true when the tests for filter() and merge() should be failing. I think there might be something wrong when I grep “OK” in junitResult.txt, what is different about the contents of junitResult.txt for this submission compared to the other sample student submissions, which all produce the correct output?
+Hello! I wrote my implementation of grade.sh from the Week 6 lab and am testing to see if it produces the expected results for different sample student submissions. I wrote a sample student submission that I expect to fail all junit tests in TestListExamples.java, but the output of grade.sh is that the submissions scores 100%! My guess is that line 46 on grade.sh, which reads `if [[ \`grep "OK" junitResult.txt\` != "" ]]` is causing this since that’s the if statement that must evaluate to true to get to the bash command `echo "SCORE AS PERCENT: 100%"` but I’m not sure why it would be evaluating to true when the tests for filter() and merge() should be failing. I think there might be something wrong when I grep “OK” in junitResult.txt, what is different about the contents of junitResult.txt for this submission compared to the other sample student submissions, which all produce the correct output?
 
 This is a screenshot of the symptom:
 ![symptom](symptom.png)
@@ -26,7 +26,7 @@ OK! I added `echo `grep “OK” junitResult.txt` at line 48 per your suggestion
 When running my bash script with the sample student submission again, I got the following output.
 ![studentDebug2](studentDebug2.png)
 
-Got it! Looks like the bug is that I forgot to delete my debugging statements in the sample student submission that printed to standard output “OK! We made it here.” When I run `java -cp $CPATH org.junit.runner.JUnitCore TestListExamples`, the TestListExamples class calls the student submission in order to test it, which prints ““OK! We made it here.” to standard output. This output was then redirected to junitResult.txt on line 43 of grade.sh as shown here.
+Got it! Looks like the bug is that I forgot to delete my debugging statements in the sample student submission that printed to standard output “OK! We made it here.” When I run `java -cp $CPATH org.junit.runner.JUnitCore TestListExamples`, the TestListExamples class calls the student submission in order to test it, which prints “OK! We made it here.” to standard output. This output was then redirected to junitResult.txt on line 43 of grade.sh as shown here.
 ![studentDebug3](studentDebug3.png)
 
 After that, when we do `grep “OK” junitResult.txt` on line 46 of grade.sh, the output of the command is not empty since it finds the string “OK” from “OK! We made it here.” I had originally intended for the `grep “OK” junitResult.txt` command to only have a non-empty string output when all of the junit tests in TestListExamples pass, since junit outputs something along the lines of “OK (3 tests)” when all the tests pass. Deleting line 15 in the sample student submission `System.out.println(“OK! We made it here.”)` fixes the bug. And produces the correct output of a score of 0%.
@@ -48,6 +48,7 @@ Also, here’s the contents of the grade.sh file, however it does not contain a 
 
 ### Fill Command Lines I Ran to Trigger Bug:
 Here are the commands I ran in my Mac Terminal to trigger the bug, starting from cloning the repository containing grade.sh to my Desktop:
+
 ![terminalCommands](terminalCommands.png)
 
 ### A Description of What to Edit to Fix The Bug:
