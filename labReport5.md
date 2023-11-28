@@ -12,6 +12,7 @@ Below is the code for the filter() method in the student submission and an excer
 This is a screenshot of the filter() method in the student's ListExamples.java in case that helps:
 
 This filter() should be failing the junit tests since it adds the filtered Strings to the front of the List result when it should be adding them to the end. The filtered elements are supposed to be returned in the same order they were in the argument list.
+
 ![origListExamples](origListExamples.png)
 
 This is a screenshot of the part of grade.sh that I think may be causing the bug:
