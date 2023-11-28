@@ -20,7 +20,7 @@ This is a screenshot of the part of grade.sh that I think may be causing the bug
 
 
 ### TA's Response:
-Hi there. Maybe try printing out the result of `grep “OK” junitResult.txt` inside the if then statement that echoes “SCORE AS PERCENT: 100%” (right before or after line 48). Are you redirecting any output to junitResult.txt that might cause `grep “OK” junitResult.txt` to not be empty somewhere in the sample student submission code?
+Hi there. Maybe try printing out the result of `grep “OK” junitResult.txt` inside the if-then statement that echoes “SCORE AS PERCENT: 100%” (you can print the result of grep right before or after line 48). Also, are you redirecting any output to junitResult.txt that might cause `grep “OK” junitResult.txt` to not be empty somewhere in the sample student submission code?
 
 ### Student's Response to TA:
 OK! I added ```echo `grep “OK” junitResult.txt``` at line 48 per your suggestion, as shown below.
