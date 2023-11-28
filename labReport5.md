@@ -37,6 +37,7 @@ After that, when we do `grep “OK” junitResult.txt` on line 46 of grade.sh, t
 
 ### File and Directory Structure Needed:
 This shows the structure of the github repository containing the files and directories needed to run the command `bash grade.sh`, which grades the github repository with a student submission given as a command line argument.
+It is the same as the structure of the list-examples-grader repository used in Week 6
 ![structure1](structure1.png)
 
 This is the structure of the github repository containing the student submission. It only includes one file called ListExamples.java which contains the filter() and merge() methods to be tested. ListExamples.java should not be in nested in any subdirectories so that the grader can find it.
