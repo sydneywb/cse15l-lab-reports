@@ -10,7 +10,7 @@ This is a screenshot of the symptom:
 Below is the code for the filter() method in the student submission and an excerpt of the code from my grade.sh script (including line 46 and the following lines) for reference. Thank you!
 
 This is a screenshot of the filter() method in the student's ListExamples.java in case that helps:
-This filter() should be failing the junit tests since it adds 
+This filter() should be failing the junit tests since it adds the filtered Strings to the front of 
 ![origListExamples](origListExamples.png)
 
 This is a screenshot of the part of grade.sh that I think may be causing the bug:
